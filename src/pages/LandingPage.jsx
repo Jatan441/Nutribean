@@ -56,7 +56,7 @@ const LandingPage = () => {
                   </Link>
                   <p className="mt-2 text-gray-500">{product.description}</p>
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="text-primary-600 font-bold">${product.price}</span>
+                    <span className="text-primary-600 font-bold">₹{product.price}</span>
                     <Link
                       to={`/product/${product.id}`}
                       className="bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 transition-colors"
