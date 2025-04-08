@@ -32,14 +32,16 @@ const Cart = () => {
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <ul className="divide-y divide-gray-200">
               {cart.map((item) => (
-                <li key={item.id} className="p-6">
-                  <div className="flex items-center">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-32 h-32 object-contain bg-white p-2 rounded-md"
-                    />
-                    <div className="ml-6 flex-1">
+                <li key={item.id} className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center">
+                    <div className="w-full sm:w-24 h-24 mb-4 sm:mb-0">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-contain bg-white p-2 rounded-md"
+                      />
+                    </div>
+                    <div className="flex-1 sm:ml-6">
                       <h3 className="text-lg font-medium text-gray-900">{item.name}</h3>
                       <p className="mt-1 text-gray-500">₹{item.price}</p>
                       <div className="mt-4 flex items-center">
@@ -66,7 +68,7 @@ const Cart = () => {
                         </button>
                       </div>
                     </div>
-                    <div className="ml-6">
+                    <div className="mt-4 sm:mt-0 sm:ml-6">
                       <p className="text-lg font-medium text-gray-900">
                         ₹{(item.price * item.quantity).toFixed(2)}
                       </p>
@@ -80,7 +82,7 @@ const Cart = () => {
 
         {/* Order Summary */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
             <h2 className="text-lg font-medium text-gray-900 mb-4">Order Summary</h2>
             <div className="space-y-4">
               <div className="flex justify-between">
@@ -102,7 +104,7 @@ const Cart = () => {
             </div>
             <Link
               to="/checkout"
-              className="mt-6 w-full bg-primary-600 text-white px-6 py-3 rounded-md hover:bg-primary-700 transition-colors text-center block"
+              className="mt-6 w-full bg-primary-600 text-white px-4 py-3 rounded-md text-sm sm:text-base hover:bg-primary-700 transition-colors text-center block"
             >
               Proceed to Checkout
             </Link>

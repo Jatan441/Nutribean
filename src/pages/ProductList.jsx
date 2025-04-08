@@ -49,7 +49,7 @@ const ProductList = () => {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredProducts.map(product => (
           <div 
             key={product.id} 
@@ -57,25 +57,25 @@ const ProductList = () => {
               animatingItems.has(product.id) ? 'scale-95' : ''
             }`}
           >
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/product/${product.id}`} className="block aspect-w-1 aspect-h-1">
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-full h-64 object-contain bg-white p-4 transform transition-transform duration-300 hover:scale-105"
               />
             </Link>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <Link to={`/product/${product.id}`}>
                 <h3 className="text-lg font-medium text-gray-900 hover:text-primary-600 transition-colors">
                   {product.name}
                 </h3>
               </Link>
-              <p className="mt-2 text-gray-500">{product.description}</p>
+              <p className="mt-2 text-sm text-gray-500">{product.description}</p>
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-primary-600 font-bold">₹{product.price}</span>
+                <span className="text-lg font-bold text-primary-600">₹{product.price}</span>
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className={`bg-primary-600 text-white px-4 py-2 rounded-md transition-all duration-300
+                  className={`bg-primary-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-md text-sm transition-all duration-300
                     ${animatingItems.has(product.id)
                       ? 'bg-primary-700 transform scale-95'
                       : 'hover:bg-primary-700 hover:shadow-lg'
