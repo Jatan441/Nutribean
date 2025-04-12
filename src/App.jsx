@@ -10,6 +10,8 @@ import Checkout from './pages/Checkout';
 import Feedback from './components/Feedback';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import About from './pages/About';
+import B2B from './pages/B2B';
+import OrderConfirmation from './pages/OrderConfirmation';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/about" element={<About />} />
+            <Route path="/b2b" element={<B2B />} />
+            <Route path="/order-confirmation" element={<OrderConfirmation />} />
           </Routes>
         </main>
         <Footer />
